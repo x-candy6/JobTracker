@@ -1,0 +1,89 @@
+{% extends 'global/page.html' %}
+{% load static %}
+{% block pagestyle %}{% static "styles/feed.css" %}{% endblock %}
+{% block title %} PROJECT HOME{% endblock %}
+{% block body %}
+
+	<div class="feed-card">
+		
+		<table id="dtDynamicVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+		  width="100%">
+		  <thead>
+		    <tr>
+		      <th name="flag_sort" class="th-sm"><a href="?sort=flag{% if reverse_flag == False %}&reverse=True{% endif %}">Flag</a>
+		      </th>
+		      <th name="remove_sort" class="th-sm"><a href="?sort=remove{% if reverse_flag == False %}&reverse=True{% endif %}">Remove</a>
+		      </th>
+		      <th name="finish_sort" class="th-sm"><a href="?sort=finish{% if reverse_flag == False %}&reverse=True{% endif %}">Done</a>
+		      </th>
+		      <th name="in_progress_sort" class="th-sm"><a href="?sort=in_progress{% if reverse_flag == False %}&reverse=True{% endif %}">W.I.P.</a>
+		      </th>
+
+		      <th name="title_sort" class="th-sm"><a href="?sort=title{% if reverse_flag == False %}&reverse=True{% endif %}">Title</a>
+		      </th>
+
+		      <th name="distance_sort" class="th-sm"><a href="?sort=distance{% if reverse_flag == False %}&reverse=True{% endif %}">Distance</a>
+		      </th>
+
+		      <th name="eta_sort" class="th-sm"><a href="?sort=eta{% if reverse_flag == False %}&reverse=True{% endif %}">ETA</a>
+		      </th>
+		    </tr>
+		  </thead>
+		{% if entries %}
+		  <tbody>
+
+			{% for entry in entries %}
+
+		    <tr>
+			<form method="POST">
+				{% csrf_token %}
+				{% if entry.flag == 0 %}
+				<td><button value = "{{entry.listing_id}}"name="flag" type="submit" class="btn btn-outline-primary square-btn" id="flag">🚩</button></td>
+				{% else %}
+				<td><button value = "{{entry.listing_id}}"name="flag" type="submit" class="btn btn-primary square-btn" id="flag">🚩</button></td>
+				{% endif %}
+
+				{% if entry.remove == 0 %}
+				<td><button value = "{{entry.listing_id}}"name="remove" type="submit" class="btn btn-outline-danger square-btn" id="flag">🗑️</button></td>
+				{% else %}
+				<td><button value = "{{entry.listing_id}}"name="remove" type="submit" class="btn btn-danger square-btn" id="flag">🗑️</button></td>
+				{% endif %}
+
+				{% if entry.finish == 0 %}
+				<td><button value = "{{entry.listing_id}}"name="done" type="submit" class="btn btn-outline-success square-btn" id="flag">✅</button></td>
+				{% else %}
+				<td><button value = "{{entry.listing_id}}"name="done" type="submit" class="btn btn-success square-btn" id="flag">✅</button></td>
+				{% endif %}
+
+				{% if entry.in_progress == 0 %}
+				<td><button value = "{{entry.listing_id}}"name="inprogress" type="submit" class="btn btn-outline-warning square-btn" id="flag">🕒</button></td>
+				{% else %}
+				<td><button value = "{{entry.listing_id}}"name="inprogress" type="submit" class="btn btn-warning square-btn" id="flag">🕒</button></td>
+				{% endif %}
+			</form>
+		      <td>
+			      <div class="listingtitle"><a href="{{entry.link}}" target="_blank" rel="noopener noreferrer">{{entry.title}}</a></div><div class="hide">{{entry.summary}}</div>
+		      </td>
+		      <td class="listingdistance">{{entry.distance}}</td>
+		      <td class="listingeta">{{entry.eta}}</td>
+		    </tr>
+
+			{% endfor %}
+		  </tfoot>
+		</table>
+
+{% endif %}
+
+	</div>
+
+<script>
+	$(document).ready(function () {
+	  $('#dtDynamicVerticalScrollExample').DataTable({
+	    "scrollY": "50vh",
+	    "scrollCollapse": true,
+	  });
+	  $('.dataTables_length').addClass('bs-select');
+	});
+</script>
+
+{% endblock %}

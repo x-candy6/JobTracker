@@ -1,0 +1,35 @@
+.not-logged{
+	max-width: 90vw;
+	background-color: #e3e3e3;
+	height: 80vh;
+	margin-left: 5%;
+	border: #bdbdbd 3px solid;
+	border-radius: 25px;
+}
+h1, h2, h3, h4{
+	text-align:center;
+}
+.introduction{
+	margin-left: 3vw;
+
+}
+
+hr{
+	border-top: 5px solid black;
+	width: 90%;
+
+}
+
+.showcase{
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+	//top: 10vh;
+	left: 35vw;
+	//transform: translate(-50%, 50%);
+
+
+
+}
+
+

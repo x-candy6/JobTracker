@@ -1,0 +1,62 @@
+category_id,category_name,provider,keywords,url
+1,IT Support,0,IT Support,http://rss.indeed.com/rss?q=IT+Support&l=Cypress%2C+CA&radius=35
+2,IT Technician,0,IT Technician,http://rss.indeed.com/rss?q=IT+Technician&l=Cypress%2C+CA&radius=35
+3,Computer Technician,0,Computer Technician,http://rss.indeed.com/rss?q=Computer+Technician&l=Cypress%2C+CA&radius=35
+4,Desktop Support,0,Desktop Support,http://rss.indeed.com/rss?q=Desktop+Support&l=Cypress%2C+CA&radius=35
+5,System Administrator,0,System Administrator,http://rss.indeed.com/rss?q=System+Administrator&l=Cypress%2C+CA&radius=35
+6,Service Desk Technician,0,Service Desk Technician,http://rss.indeed.com/rss?q=Service+Desk+Technician&l=Cypress%2C+CA&radius=35
+7,Entry Level IT Technician,0,Entry Level IT Technician,http://rss.indeed.com/rss?q=Entry+Level+IT+Technician&l=Cypress%2C+CA&radius=35
+8,Entry Developer,0,Entry Developer,http://rss.indeed.com/rss?q=Entry+Developer&l=Cypress%2C+CA&radius=35
+9,Entry Software,0,Entry Software,http://rss.indeed.com/rss?q=Entry+Software&l=Cypress%2C+CA&radius=35
+10,Database Technician,0,Database Technician,http://rss.indeed.com/rss?q=Database+Technician&l=Cypress%2C+CA&radius=35
+11,Quality Assurance Tester,0,Quality Assurance Tester,http://rss.indeed.com/rss?q=Quality+Assurance+Tester&l=Cypress%2C+CA&radius=35
+12,Network Analyst,0,Network Analyst,http://rss.indeed.com/rss?q=Network+Analyst&l=Cypress%2C+CA&radius=35
+13,Network Technician,0,Network Technician,http://rss.indeed.com/rss?q=Network+Technician&l=Cypress%2C+CA&radius=35
+14,IT Specialist,0,IT Specialist,http://rss.indeed.com/rss?q=IT+Specialist&l=Cypress%2C+CA&radius=35
+15,Computer Specialist,0,Computer Specialist,http://rss.indeed.com/rss?q=Computer+Specialist&l=Cypress%2C+CA&radius=35
+16,DevOps Assistant,0,DevOps Assistant,http://rss.indeed.com/rss?q=DevOps+Assistant&l=Cypress%2C+CA&radius=35
+17,Coding Teacher,0,Coding Teacher,http://rss.indeed.com/rss?q=Coding+Teacher&l=Cypress%2C+CA&radius=35
+18,Coding Tutor,0,Coding Tutor,http://rss.indeed.com/rss?q=Coding+Tutor&l=Cypress%2C+CA&radius=35
+19,Programming Teacher,0,Programming Teacher,http://rss.indeed.com/rss?q=Programming+Teacher&l=Cypress%2C+CA&radius=35
+20,Programming Tutor,0,Programming Tutor,http://rss.indeed.com/rss?q=Programming+Tutor&l=Cypress%2C+CA&radius=35
+21,Security Analyst,0,Security Analyst,http://rss.indeed.com/rss?q=Security+Analyst&l=Cypress%2C+CA&radius=35
+22,Junior Developer,0,Junior Developer,http://rss.indeed.com/rss?q=Junior+Developer&l=Cypress%2C+CA&radius=35
+23,Junior Software,0,Junior Software,http://rss.indeed.com/rss?q=Junior+Software&l=Cypress%2C+CA&radius=35
+24,Junior Software Engineer,0,Junior Software Engineer,http://rss.indeed.com/rss?q=Junior+Software+Engineer&l=Cypress%2C+CA&radius=35
+25,Network Operations Center Technician,0,Network Operations Center Technician,http://rss.indeed.com/rss?q=Network+Operations+Center+Technician&l=Cypress%2C+CA&radius=35
+26,Network Operations Center Tech,0,Network Operations Center Tech,http://rss.indeed.com/rss?q=Network+Operations+Center+Tech&l=Cypress%2C+CA&radius=35
+27,Network Operations Center NOC Technician Tech,0,Network Operations Center NOC Technician Tech,http://rss.indeed.com/rss?q=Network+Operations+Center+NOC+Technician+Tech&l=Cypress%2C+CA&radius=35
+28,Systems Support Analyst,0,Systems Support Analyst,http://rss.indeed.com/rss?q=Systems+Support+Analyst&l=Cypress%2C+CA&radius=35
+29,Application Support Specialist,0,Application Support Specialist,http://rss.indeed.com/rss?q=Application+Support+Specialist&l=Cypress%2C+CA&radius=35
+30,Software Tester,0,Software Tester,http://rss.indeed.com/rss?q=Software+Tester&l=Cypress%2C+CA&radius=35
+31,Cloud Support Associate,0,Cloud Support Associate,http://rss.indeed.com/rss?q=Cloud+Support+Associate&l=Cypress%2C+CA&radius=35
+32,Junior Penetration Tester,0,Junior Penetration Tester,http://rss.indeed.com/rss?q=Junior+Penetration+Tester&l=Cypress%2C+CA&radius=35
+33,Technical Support Engineer,0,Technical Support Engineer,http://rss.indeed.com/rss?q=Technical+Support+Engineer&l=Cypress%2C+CA&radius=35
+34,IT Operations Specialist,0,IT Operations Specialist,http://rss.indeed.com/rss?q=IT+Operations+Specialist&l=Cypress%2C+CA&radius=35
+35,Database Administrator Assistant,0,Database Administrator Assistant,http://rss.indeed.com/rss?q=Database+Administrator+Assistant&l=Cypress%2C+CA&radius=35
+36,Network Administrator,0,Network Administrator,http://rss.indeed.com/rss?q=Network+Administrator&l=Cypress%2C+CA&radius=35
+37,System Analyst,0,System Analyst,http://rss.indeed.com/rss?q=System+Analyst&l=Cypress%2C+CA&radius=35
+38,Database Support Specialist,0,Database Support Specialist,http://rss.indeed.com/rss?q=Database+Support+Specialist&l=Cypress%2C+CA&radius=35
+39,Help Desk Analyst,0,Help Desk Analyst,http://rss.indeed.com/rss?q=Help+Desk+Analyst&l=Cypress%2C+CA&radius=35
+40,Network Engineer Assistant,0,Network Engineer Assistant,http://rss.indeed.com/rss?q=Network+Engineer+Assistant&l=Cypress%2C+CA&radius=35
+41,Junior DevOps Engineer,0,Junior DevOps Engineer,http://rss.indeed.com/rss?q=Junior+DevOps+Engineer&l=Cypress%2C+CA&radius=35
+42,Cybersecurity Technician,0,Cybersecurity Technician,http://rss.indeed.com/rss?q=Cybersecurity+Technician&l=Cypress%2C+CA&radius=35
+43,Data Analyst,0,Data Analyst,http://rss.indeed.com/rss?q=Data+Analyst&l=Cypress%2C+CA&radius=35
+44,Junior Cloud Engineer,0,Junior Cloud Engineer,http://rss.indeed.com/rss?q=Junior+Cloud+Engineer&l=Cypress%2C+CA&radius=35
+45,Software Support Technician,0,Software Support Technician,http://rss.indeed.com/rss?q=Software+Support+Technician&l=Cypress%2C+CA&radius=35
+46,IT Analyst,0,IT Analyst,http://rss.indeed.com/rss?q=IT+Analyst&l=Cypress%2C+CA&radius=35
+47,Junior UX/UI Designer,0,Junior UX/UI Designer,http://rss.indeed.com/rss?q=Junior+UX/UI+Designer&l=Cypress%2C+CA&radius=35
+48,Junior QA Engineer,0,Junior QA Engineer,http://rss.indeed.com/rss?q=Junior+QA+Engineer&l=Cypress%2C+CA&radius=35
+49,Data Management Technician,0,Data Management Technician,http://rss.indeed.com/rss?q=Data+Management+Technician&l=Cypress%2C+CA&radius=35
+50,System Administrator Entry,0,System Administrator Entry,http://rss.indeed.com/rss?q=System+Administrator+Entry&l=Cypress%2C+CA&radius=35
+51,Linux,0,Linux,http://rss.indeed.com/rss?q=Linux&l=Cypress%2C+CA&radius=35
+52,IT Lab Specialist,0,IT Lab Specialist,http://rss.indeed.com/rss?q=IT+Lab+Specialist&l=Cypress%2C+CA&radius=35
+53,IT Lab Technician,0,IT Lab Technician,http://rss.indeed.com/rss?q=IT+Lab+Technician&l=Cypress%2C+CA&radius=35
+54,IT Admin,0,IT Admin,http://rss.indeed.com/rss?q=IT+Admin&l=Cypress%2C+CA&radius=35
+55,System Admin,0,System Admin,http://rss.indeed.com/rss?q=System+Admin&l=Cypress%2C+CA&radius=35
+56,Systems Engineer,0,Systems Engineer,http://rss.indeed.com/rss?q=Systems+Engineer&l=Cypress%2C+CA&radius=35
+57,IT Security Engineer,0,IT Security Engineer,http://rss.indeed.com/rss?q=IT+Security+Engineer&l=Cypress%2C+CA&radius=35
+58,Computer System Specialist,0,Computer System Specialist,http://rss.indeed.com/rss?q=Computer+System+Specialist&l=Cypress%2C+CA&radius=35
+59,Desktop Support,0,Desktop Support,http://rss.indeed.com/rss?q=Desktop+Support&l=Cypress%2C+CA&radius=35
+60,IT Engineer,0,IT Engineer,http://rss.indeed.com/rss?q=IT+Engineer&l=Cypress%2C+CA&radius=35
+61,IT Solutions Engineer,0,IT Solutions Engineer,http://rss.indeed.com/rss?q=IT+Solutions+Engineer&l=Cypress%2C+CA&radius=35

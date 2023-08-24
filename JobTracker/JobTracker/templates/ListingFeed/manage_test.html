@@ -1,0 +1,78 @@
+{% extends 'global/page.html' %} 
+{% load static %}
+{% block pagestyle %}{% static 'styles/manage.css' %}{% endblock %}
+{% block title %}Manage Feeds {% endblock %} 
+{% block body %}
+<div class="manage-card">
+	{% if not user.is_authneticated %}
+	<form  id="distanceForm" method="POST">
+		{% csrf_token %}
+		{{rangeForm}}
+		<span id="rangeValue" default=1></span>
+
+		<button name="distanceForm" type="submit">Apply</button>
+
+
+
+	</form>
+
+	<form method="post">
+	    {% csrf_token %}
+	    <label for="address">Enter Address:</label>
+	    <input type="text" name="address" id="address" required>
+	    <button name="getGPS" type="submit">Get Coordinates</button>
+	</form>
+
+	<form method="post">
+	    {% csrf_token %}
+	    <button name="procList" type="submit">process List</button>
+	</form>
+
+	<form method="post">
+	    {% csrf_token %}
+	    <button name="testGetURL" type="submit">test url</button>
+	</form>
+
+
+	<form method="post">
+	    {% csrf_token %}
+	    {{ PhraseListForm.as_p }}
+	    <div class="phraseBox" style="overflow:auto;">
+		    {% if PhraseList %}
+		    	{% for Phrase in PhraseList%}
+			<li>{{Phrase}}</li>
+		    	{% endfor %}
+		    {% endif %}
+	    </div>
+	    <button name="queryKeywords" type="submit">Submit</button>
+	</form>
+
+	<form method="post">
+	    {% csrf_token %}
+	    <div class="phraseBox" style="overflow:auto;">
+		    {% if url_list %}
+		    	{% for url in url_list %}
+			<li>{{url.url}}</li>
+		    	{% endfor %}
+		    {% endif %}
+	    </div>
+	    <button name="getURLS" type="submit">getURLS</button>
+	</form>
+
+	<script>
+
+		const rangeInput = document.getElementById('distanceRange');
+		const rangeValue = document.getElementById('rangeValue');
+		
+		rangeInput.addEventListener('input', () => {
+		    rangeValue.textContent = rangeInput.value;
+		});
+	</script>
+	{% else %}
+	{% include 'global/userauth_error.html' %}
+
+	{% endif %}
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends 'global/page.html' %}
+{% block title %} PROJECT HOME{% endblock %}
+{% block body %}
+<!--INSERT CONTENT-->
+
+{% endblock %}
+
+<table id="dtDynamicVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Listing Title
+      </th>
+      <th class="th-sm">Distance
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+	<li><a href="{{entry.link}}">{{entry.title}}</a></li>
+      </td>
+      <td>{{entry.distance}}</td>
+    </tr>
+  </tfoot>
+</table>

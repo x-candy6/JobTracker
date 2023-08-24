@@ -1,0 +1,52 @@
+{% extends 'global/page.html' %}
+{% load static %}
+{% block pagestyle %}{% static 'styles/home.css' %}{% endblock %}
+{% block title %} Job Tracker v0.2 {% endblock %}
+
+{% block body %}	
+
+{% if not user.is_authenticated %}
+<div class="not-logged">
+	<h1>JobTracker v0.2</h1>
+	<hr>
+	<div class="introduction">
+		JobTracker is a ease-of-life solution for those seeking employment opportunities.
+		Instead of manually searching through multiple employment sites for multiple job titles,
+		JobTracker helps optimize this process by conglomerating the listings from those sites and those search queries based on your commute distance.
+
+		<hr>
+		As of v0.2, JobTracker is configured to retrieve listings from the following sites:
+		<br>
+		<li>Indeed</li>
+		<br>
+		From here, you can fetch listings for multiple job titles and adjust your personal listing database based on your certain preferences.
+		
+		<hr>
+		<br>
+		Future developments include:
+		<br>
+		<li>Integration with GlassDoor</li>
+		<li>Integration with ZipRecruiter</li>
+		<li>Integration with Monster</li>
+		<li>Different listing visualization techniques</li>
+		<li>Improved Feed Personalization</li>
+		<li>Application Process Optimization</li>
+		<li>Website Style Revamp</li>
+
+	</div>
+	<hr>
+	<h3>Showcase</h3>
+	<div class="showcase">	
+		<video controls>
+			<source src="{% static 'media/videos/hampsterdance.mp4' %}"></source>
+		</video>
+	</div>
+</div>
+{% else %}
+{% include 'User/dashboard.html' %}
+{% endif %}
+
+
+
+{% endblock %}
+

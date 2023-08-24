@@ -1,0 +1,163 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+TITLE:RSSTracker
+#+AUTHOR:AndrewC
+#+DESCRIPTION:A module to track relevant rss feeds and can be fed into a variety of apps like HTML
+#+DATE:<2023-08-15 mar>
+
+
+* Introduction
+JobTracker is a project that aims to coalesce multiple job listing feeds into a single feed. The current paradigm for seeking employment involves:
+1) Going to job website A
+2) Searching for job-title 1
+3) Spend time applying and filtering out job listings for job-title 1
+4) Searching for job-title 2
+5) Spend time applying and filtering out job listings for job-title 2
+6) Repeat steps 1-5 for job website B, and the same job titles
+   
+This project aims to optimize this search by allowing users to create a list of job-titles and keywords that are repeatedly used in their search queries on various job-listing websites.
+It will take this list and retrieve the feeds from different websites and coalesce them into a single feed for the user.
+
+Now the user can filter and sort through them to find optimal listings.
+
+* Showcase
+
+#+BEGIN_EXPORT html
+<video width="640" height"480" controls>
+    <source src="http://c-andrew.surge.sh/showcaseV0_2.mp4">
+</video
+#+END_EXPORT
+
+* Steps to Run
+  **The following section are general installation steps and will require additional configuration for proper running**
+  - Clone the Repo
+  - Create a mysql database and subsequently a mysql account with privileges to that database
+  - Install python dependencies
+  - Enter your credentials into the config.json file(This will require a Google API key with geolocation and geo-encoding enabled)
+  - run makemigrations and migrate
+  - Run the server
+
+
+* Notes
+<2023-08-15 mar>
+The script doesn't seem to be fetching all sources
+It seems like there is a traffic-loadbalancer that denies data fetching.
+
+<2023-08-16 mié>
+- Above problem solved via hacky method using sleep() to wait after parsing each feed url
+- Some maintenence needed for better functionality, like:
+  - Error Handling
+  - Static Buttons
+
+<2023-08-21 Mon>
+Project is READY for personal use now
+All developments past this point will be to increase quality-of-life and allow for the incorporation of a bigger user-base.
+
+<2023-08-24 Thu>
+Incorporated asynchronous handling of data to be parsed.
+Allow user to set their commute distance and commute-from location from Manage.
+
+UI needs a heavy re-vamp. 
+Especially the Manage page, right now it is very messy and only allows for basic data handling and crud operations.
+It needs to focus more around the UX now that the basic features are now implemented.
+This includes: 
+- Embedding a google api map onto the page, so users can input their address and have it shown on the map, and subsequently persist that geo coordinate into the db.
+- Creating an actual profile page
+- Creating a dashboard with relevant information like: # of job listings, # of flagged job listings, date joined, last login
+- Creating a better way to display the job description
+- Allow for CRUD operations on user feed settings like Removing Job titles and Job URLS, clearing their URLs
+- Error handling for parsing
+- A console-type log that the user can see that dynamically displays the progress of the parser
+
+* KANBAN
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| TODO                                                                                                                                                                    | DOING | DONE                                                                                                             |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                                                         |       | INITIALIZATION: Create README.org                                                                                |
+|                                                                                                                                                                         |       | INITIALIZATION: Get RSS URLs from relevant job titles from Indeed                                                |
+|                                                                                                                                                                         |       | INITIALIZATION: Create script to fetch job listing entries from each URL                                         |
+|                                                                                                                                                                         |       | INITIALIZATION: Create django prototype for backend functionality                                                |
+|                                                                                                                                                                         |       | INITIALIZATION: Create database                                                                                  |
+|                                                                                                                                                                         |       | INITIALIZATION: Incorporate script to follow django standards                                                    |
+|                                                                                                                                                                         |       | INITIALIZATION: Persist job-entries into database                                                                |
+|                                                                                                                                                                         |       | INITIALIZATION: modularize into static modules: user auth, display feed, load feed                               |
+|                                                                                                                                                                         |       | PROTOTYPING: Create frontend skeleton prototype                                                                  |
+|                                                                                                                                                                         |       | PROTOTYPING: Load Feed Function: Create button to load entries and redirect to display-feed with updated entries |
+|                                                                                                                                                                         |       | PROTOTYPING: Feed Display: Create UI-friendly method to organize entry data                                      |
+|                                                                                                                                                                         |       | PROTOTYPING: Display Feed:Setup user-based data handling for boolean variables like 'Finished'                   |
+|                                                                                                                                                                         |       | PROTOTYPING: Display Feed: Sort based on different filters/options                                               |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       | FUNCTIONS: Display Feed: calculate relative distance                                                             |
+|                                                                                                                                                                         |       | User Auth: Implement user authentication functionality                                                           |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       | ASYNCHRONOUS LOADING: Basic function for loading the parser and then redirecting to the feed page after its done |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       | FUNCTIONS: RSS URL generator based off of user-supplied form data(distance, job titles)                          |
+|                                                                                                                                                                         |       | FUNCTIONS: Update parser function to retrieve based off of user-supplied coordinates                             |
+|                                                                                                                                                                         |       | PROFILE: Basic profile feature                                                                                   |
+|                                                                                                                                                                         |       | PROFILE: GIS Implementation to retrieve user-supplied commute-from coordinates                                   |
+|                                                                                                                                                                         |       | FEATURE: Create/Edit custom user feed via user-supplied job titles and location                                  |
+|                                                                                                                                                                         |       | User Auth: Create/Incorporate some method to house user-specific data(i.e. home-coordinates)                     |
+|                                                                                                                                                                         |       | User Auth: Create URL:i/o handling to input custom rss feed lists(not only your jobs)                            |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       | User Auth: Create a profile for the user to house commute miles and user commute location upon registration      |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| UI/UX: Revamp required for better facillitation of user experience specifically on the Manage Feed page.                                                                |       |                                                                                                                  |
+| UX - Embedding a google api map onto the page, so users can input their address and have it shown on the map, and subsequently persist that geo coordinate into the db. |       |                                                                                                                  |
+| UX - Creating an actual profile page                                                                                                                                    |       |                                                                                                                  |
+| UX - Creating a dashboard with relevant information like: # of job listings, # of flagged job listings, date joined, last login                                         |       |                                                                                                                  |
+| UX - Creating a better way to display the job description                                                                                                               |       |                                                                                                                  |
+| UX - A console-type log that the user can see that dynamically displays the progress of the parser                                                                      |       |                                                                                                                  |
+| UX - Allow for CRUD operations on user feed settings like Removing Job titles and Job URLS, clearing their URLs                                                         |       |                                                                                                                  |
+| Maintenence - Error handling for parsing                                                                                                                                |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| User Auth: User Account Settings - Allow users to delete/deactivate their accounts                                                                                      |       |                                                                                                                  |
+| User Auth: Instead of using django auth, switch to SSO                                                                                                                  |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| Deployment: Create server environment                                                                                                                                   |       |                                                                                                                  |
+| Deployment: Adjust system configurations                                                                                                                                |       |                                                                                                                  |
+| Deployment: Adjust firewall                                                                                                                                             |       |                                                                                                                  |
+| Deployment: Create application environment(setup db, install required libraries)                                                                                        |       |                                                                                                                  |
+| Deployment: Configure Web Security - https                                                                                                                              |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| Optimization: Incorporate logic to incorporate dynamic threading based on the size of the data to be processed                                                          |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| Dynamism                                                                                                                                                                |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| - Relevant libraries include Celery for asynchronous tasks                                                                                                              |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| Some asynchronous tasks to consider:                                                                                                                                    |       |                                                                                                                  |
+| - Loading Pages                                                                                                                                                         |       |                                                                                                                  |
+| - Database Fetching/Sorting on the same Feed page(not requiring a re-render for every user db action(i.e. sorting and filtering)                                        |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| UX/UI Revamp                                                                                                                                                            |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| - Incorporating javascript elements to heavily increase the UX experience                                                                                               |       |                                                                                                                  |
+| - Creating custom assets that pair well with the overall aesthetic theme of the application                                                                             |       |                                                                                                                  |
+| - Ensuring near-universal compatability for a diverse range of devices                                                                                                  |       |                                                                                                                  |
+| - Accessbility modules for hearing/vision impaired users                                                                                                                |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| Different stylings for data organization                                                                                                                                |       |                                                                                                                  |
+| - Incorporating multiple data visualization techniques as opposed to a single list of listings                                                                          |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+| Data Visualization Techniques to consider:                                                                                                                              |       |                                                                                                                  |
+| - Bubble Map(Circles with varying shapes and sizes organized in varying formations based on data, filters, and sorting methods                                          |       |                                                                                                                  |
+| - Real-world GPS map with job-listing-nodes                                                                                                                             |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| Fundraising                                                                                                                                                             |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+| - Creating a fundraising plan                                                                                                                                           |       |                                                                                                                  |
+| - Establishing and implementing methods of payment                                                                                                                      |       |                                                                                                                  |
+| - Payment Processing - Create payment processing prototype                                                                                                              |       |                                                                                                                  |
+|                                                                                                                                                                         |       |                                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------|
+
+
