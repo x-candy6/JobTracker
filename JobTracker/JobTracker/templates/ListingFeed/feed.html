@@ -5,6 +5,13 @@
 {% block body %}
 
 	<div class="feed-card">
+		<div class="form-group text-center">
+			<form method="POST">
+				{% csrf_token %}
+				<input name="search" style="width:60%;" type="text" id="search">
+				<input type="submit" ></input>
+			</form>
+		</div>
 		
 		<table id="dtDynamicVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
 		  width="100%">

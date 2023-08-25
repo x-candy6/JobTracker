@@ -239,6 +239,9 @@ def feed(request):
 
 
     ## Datum Manipulation Buttons
+    if 'search' in request.POST:
+        entries = models.Indeedlistings.objects.filter(user_id=request.user, title__icontains=request.POST['search'])
+
     if 'flag' in request.POST:
         entry = models.Indeedlistings.objects.get(listing_id=request.POST['flag'], user_id=request.user)
         entry.flag = 0 if entry.flag == 1 else 1
@@ -304,9 +307,6 @@ def manage(request):
         userprofile.location = location
         userprofile.save()
 
-
-    if 'testGetURL' in request.POST:
-        create_indeed_url(request)
 
     if 'getURLS' in request.POST:
         create_indeed_url(request)

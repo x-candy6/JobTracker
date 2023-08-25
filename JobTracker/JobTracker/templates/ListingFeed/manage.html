@@ -2,52 +2,57 @@
 {% load static %} {% block pagestyle %}{% static 'styles/manage.css' %}{% endblock %}
 {% block title %}Manage Feeds {% endblock %} 
 {% block body %}
-<div class="manage-card">
+
+<div class="manage-card text-center">
 	{% if not user.is_authneticated %}
-	<form  id="distanceForm" method="POST">
+	<div class="card text-white bg-dark">
+	<h1>MANAGE FEED</h1>
+	<form class="form-group" id="distanceForm" method="POST">
 		{% csrf_token %}
+		<h3>Enter the maximum miles you'd want to commute:</h3>
 		{{rangeForm}}
 		<span id="rangeValue" default=1></span>
-
 		<button name="distanceForm" type="submit">Apply</button>
-
-
-
 	</form>
-
+	</div>
+	<div class="card text-white bg-dark">
 	<form method="post">
 	    {% csrf_token %}
+	    <h3>Enter the address you will be commuting from:</h3>
 	    <label for="address">Enter Address:</label>
 	    <input type="text" name="address" id="address" required>
 	    <button name="getGPS" type="submit">Get Coordinates</button>
 	</form>
+	</div>
 
+	<br>
+	<br>
+	<div class="card text-white bg-dark">
 	<form method="post">
 	    {% csrf_token %}
-	    <div class="phraseBox" style="border:black 2px solid; overflow:auto;">
+		<h3>Enter job titles and keywords you want to search for, all separated by a comma (,)</h3>
 	    {{ PhraseListForm.as_p }}
+	    <button name="queryKeywords" type="submit">Submit Job Titles</button>
+	    <div class="phraseBox" style="border:black 2px solid; border-radius:15px; overflow:auto; width: 30%;margin:auto; background-color: #e3e3e3; color: black;">
 		    {% if PhraseList %}
 		    	{% for Phrase in PhraseList%}
 			<li>{{Phrase}}</li>
 		    	{% endfor %}
 		    {% endif %}
-
-		    <hr>
-	    <button name="queryKeywords" type="submit">Submit Job Titles</button>
-
 	    </div>
 	</form>
-
-	<h3> URL LIST </h3>
+	</div>
+	<br>
+	<br>
+	<div class="card text-white bg-dark"><h3> URL LIST </h3></div>
+	<div class="card text-white bg-dark">
 	<form method="post">
 	    {% csrf_token %}
-
 	    <button name="getURLS" type="submit">1. Update URL List</button>
-	    <button name="procList" type="submit">2. Process URL List</button>
-	    <button  name="startParsingButton" id ="startParsingButton">Start Parsing</button>
+	    <button  name="startParsingButton" id ="startParsingButton">2. Start Parsing</button>
 
 	    <div id="loading-spinner" class="loading-spinner" style=display:none;"></div>
-	    <div class="phraseBox" style="border:black 2px solid; border-radius:15px; overflow:scroll;">
+	    <div class="phraseBox" style="border:black 2px solid; border-radius:15px; overflow:scroll; width: 40%; margin:auto; background-color: #e3e3e3; color: black;">
 		    {% if url_list %}
 		    	{% for url in url_list %}
 			<li>{{url.url}}</li>
@@ -56,6 +61,7 @@
 	    </div>
 
 	</form>
+	</div>
 
 
 	<script>
@@ -71,7 +77,6 @@
 	{% include 'global/userauth_error.html' %}
 
 	{% endif %}
-
 </div>
 <script>
 
